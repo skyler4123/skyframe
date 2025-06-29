@@ -1,6 +1,7 @@
 const BASE_URL = "https://6861040c8e7486408444a6a3.mockapi.io/api/v1/products";
 
 export const ProductsApi = {
+  BASE_URL,
   async index() {
     const res = await fetch(BASE_URL);
     if (!res.ok) throw new Error("Failed to fetch products");

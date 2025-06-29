@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import { ProductsApi } from "@/api/products_api";
 import { ProductType } from "@/types/product_type";
+import Link from "next/link";
 
 export default function Home() {
   const [productsState, setProductsState] = useState<ProductType[]>([]); // Adjust type as needed
   useEffect(() => {
+    console.log(ProductsApi)
     const products = ProductsApi.index(); // Assuming this API returns products
     products
       .then((data) => {
@@ -36,7 +38,7 @@ export default function Home() {
                 ))}
               </div>
               <div>
-                {product.id} - {product.name} - {product.price} - {product.description}\
+                {product.id} - <Link href={`/products/${product.id}`}>{product.name}</Link> - {product.price} - {product.description}
               </div>
             </li>
           ))}
