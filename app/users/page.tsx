@@ -1,6 +1,6 @@
 "use client";
 
-import { UsersAPI } from "@/api/users_api";
+import { UsersApi } from "@/api/users_api";
 import { useEffect, useState } from "react";
 import { UserType } from "@/types/user_type";
 
@@ -8,7 +8,7 @@ export default function Home() {
   const [usersState, setUsersState] = useState<UserType[]>([]);
   
   useEffect(() => {
-    const users = UsersAPI.index();
+    const users = UsersApi.index();
     users
       .then((data) => {
         console.log("Fetched users:", data);
