@@ -5,7 +5,7 @@ import { ProductsApi } from "@/api/products_api";
 import { ProductType } from "@/types/product_type";
 import Link from "next/link";
 
-export default function Home() {
+export default function ProductsPage() {
   const [productsState, setProductsState] = useState<ProductType[]>([]); // Adjust type as needed
   useEffect(() => {
     console.log(ProductsApi)
