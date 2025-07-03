@@ -6,8 +6,8 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
-export default function ProductsIdPage({ params }: Props) {
-  const { id } = use(params);
+export default function ProductsIdPage(props: Props) {
+  const { id } = use(props.params);
   // useEffect(() => {
   //   // Here you can fetch product details using the id
   //   console.log(params.id)
